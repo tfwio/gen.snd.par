@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 4.0.0.7070
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "genericwav", "genericwav.csproj", "{73D0FED9-101D-4C98-B725-B107AB468A3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itik", "..\ititoo\itik.csproj", "{1311E82A-6407-494B-A9BA-BDBE947A3C17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xmid", "..\xmid\xmid.csproj", "{F8A9D892-7F27-4501-8DDF-4970674477DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73D0FED9-101D-4C98-B725-B107AB468A3C}.Debug|Any CPU.Build.0 = x86_dbg|Any CPU
+		{73D0FED9-101D-4C98-B725-B107AB468A3C}.Debug|Any CPU.ActiveCfg = x86_dbg|Any CPU
+		{73D0FED9-101D-4C98-B725-B107AB468A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D0FED9-101D-4C98-B725-B107AB468A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1311E82A-6407-494B-A9BA-BDBE947A3C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1311E82A-6407-494B-A9BA-BDBE947A3C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1311E82A-6407-494B-A9BA-BDBE947A3C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1311E82A-6407-494B-A9BA-BDBE947A3C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Debug|Any CPU.Build.0 = Debug|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Release|Any CPU.Build.0 = Release|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Release|Any CPU.ActiveCfg = Release|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Debug|x86.Build.0 = Debug|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Debug|x86.ActiveCfg = Debug|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Release|x86.Build.0 = Release|x86
+		{F8A9D892-7F27-4501-8DDF-4970674477DA}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal
