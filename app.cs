@@ -22,7 +22,7 @@ using System;
 using System.Windows.Forms;
 using gen.snd;
 
-namespace GenericWAV
+namespace gen.snd
 {
 
 	public class app

@@ -27,7 +27,7 @@ using System.Windows.Forms;
 using gen.snd.IffForm;
 using gen.snd.Modules;
 
-namespace GenericWAV.Modules
+namespace gen.snd.Modules
 {
 	// when in doubt: http://www.sonicspot.com/guide/wavefiles.html
 	[Export(typeof(IAudioModule<>))]

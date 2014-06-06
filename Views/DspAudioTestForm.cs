@@ -31,7 +31,6 @@ using System.Windows.Forms;
 using gen.snd.Formats;
 using gen.snd.IffForm;
 using gen.snd.Modules;
-using GenericWAV.Modules;
 
 namespace gen.snd
 {
@@ -128,7 +127,7 @@ namespace gen.snd
 		
 		#endregion
 		Bitmap SplashImage;
-		private System.Windows.Forms.SplashForm spx;
+		private SplashForm spx;
 		private gen.snd.Forms.WaveOutTestForm PlayerForm;
 
 		BasicAudioModule ActiveModule;

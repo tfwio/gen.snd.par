@@ -37,7 +37,7 @@ using SFSampleLink = gen.snd.Formats.SoundFont2.SFSampleLink;
 
 
 
-namespace GenericWAV.Modules
+namespace gen.snd.Modules
 {
 
 	[Export(typeof(IAudioModule<>))]

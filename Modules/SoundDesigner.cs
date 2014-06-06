@@ -21,7 +21,7 @@
 #endregion
 using System;
 
-namespace GenericWAV.Modules
+namespace gen.snd.Modules
 {
 	/// <summary>
 	/// Description of SoundPlayer.
