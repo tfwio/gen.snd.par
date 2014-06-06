@@ -21,6 +21,9 @@
     <AssemblyOriginatorKeyFile>..\gen.snd.common\gen.snd.common.snk</AssemblyOriginatorKeyFile>
     <DelaySign>False</DelaySign>
     <AssemblyOriginatorKeyMode>File</AssemblyOriginatorKeyMode>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <DebugType>Full</DebugType>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>False</Optimize>
@@ -28,6 +31,7 @@
     <DebugSymbols>true</DebugSymbols>
     <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
     <OutputType>WinExe</OutputType>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <Optimize>True</Optimize>
