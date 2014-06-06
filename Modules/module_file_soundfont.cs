@@ -26,11 +26,11 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-using DspAudio.Formats;
-using DspAudio.IffForm;
-using DspAudio.Modules;
-using SFGenConst = DspAudio.Formats.SoundFont2.SFGenConst;
-using SFSampleLink = DspAudio.Formats.SoundFont2.SFSampleLink;
+using gen.snd.Formats;
+using gen.snd.IffForm;
+using gen.snd.Modules;
+using SFGenConst = gen.snd.Formats.SoundFont2.SFGenConst;
+using SFSampleLink = gen.snd.Formats.SoundFont2.SFSampleLink;
 
 // generator constants are within the sf-class
 

@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("MIDI SMF Tools")]
 [assembly: AssemblyDescription("Revision #$WCREV$")]
-[assembly: AssemblyProduct("MIDI SMF Tools (DspAudio/SoundLib)")]
+[assembly: AssemblyProduct("MIDI SMF Tools (gen.snd/SoundLib)")]
 [assembly: AssemblyCopyright("2005-2012 tfwroble@gmail.com")]
 [assembly: AssemblyCompany("tfw.co")]
 [assembly: AssemblyVersion("1.0.*")]

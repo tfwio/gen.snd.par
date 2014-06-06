@@ -25,7 +25,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-using DspAudio.IffForm;
+using gen.snd.IffForm;
 using GraphicsUnit=System.Cor3.Drawing.DblUnit;
 
 namespace GenericWAV.Views

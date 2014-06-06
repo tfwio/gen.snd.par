@@ -19,11 +19,11 @@
 // DEALINGS IN THE SOFTWARE.
 #endregion
 using System;
-using System.CommonControls;
 using System.Windows.Forms;
 
-using DspAudio.Modules;
 //using Windows.CommonControls;
+
+using gen.snd.Modules;
 
 namespace GenericWAV.Modules
 {
@@ -32,9 +32,9 @@ namespace GenericWAV.Modules
 		#region Static
 		static internal ListView lv, lva, lvb;
 		static internal SplitContainer splita, splitb, splitc, splitd;
-		static internal CsShellFileView XPLO;
+		static internal Windows.CommonControls.CsShellFileView XPLO;
 		
-		static internal void InitializeExplo(CsShellFileView x)
+		static internal void InitializeExplo(Windows.CommonControls.CsShellFileView x)
 		{
 			XPLO = x;
 		}

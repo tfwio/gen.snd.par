@@ -24,8 +24,8 @@ using System.ComponentModel.Composition;
 using System.Drawing;
 using System.Windows.Forms;
 
-using DspAudio.IffForm;
-using DspAudio.Modules;
+using gen.snd.IffForm;
+using gen.snd.Modules;
 
 namespace GenericWAV.Modules
 {

@@ -20,7 +20,7 @@
 #endregion
 using System;
 using System.Windows.Forms;
-using DspAudio.Formats;
+using gen.snd.Formats;
 
 namespace GenericWAV.Modules
 {

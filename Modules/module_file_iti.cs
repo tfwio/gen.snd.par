@@ -23,8 +23,8 @@ using System.ComponentModel.Composition;
 using System.IO;
 using System.Windows.Forms;
 
-using DspAudio.Formats;
-using DspAudio.Modules;
+using gen.snd.Formats;
+using gen.snd.Modules;
 
 namespace GenericWAV.Modules
 {

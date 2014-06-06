@@ -28,10 +28,9 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-using DspAudio.Formats;
-using DspAudio.Forms;
-using DspAudio.IffForm;
-using DspAudio.Modules;
+using gen.snd.Formats;
+using gen.snd.IffForm;
+using gen.snd.Modules;
 using GenericWAV.Modules;
 
 namespace GenericWAV.Views
@@ -111,7 +110,10 @@ namespace GenericWAV.Views
 				foreach (Regex rx in Expressions)
 				{
 					Match m = rx.Match(content);
-					Debug.Print(string.Format("IsMatch: {0}, Name: {1}, Value: {2}",rx.IsMatch(content), m.Groups[1].Value, m.Groups[2].Value));
+					
+					Debug.WriteLine(string.Format("Match Content: {0}",content));
+					Debug.WriteLine(string.Format("IsMatch: {0}, Name: {1}, Value: {2}",rx.IsMatch(content), m.Groups[1].Value, m.Groups[2].Value));
+					
 					string test = m.Groups[1].Value;
 					switch (test)
 					{
@@ -126,14 +128,14 @@ namespace GenericWAV.Views
 		
 		#endregion
 		Bitmap SplashImage;
-		protected SplashForm spx;
-		protected WaveOutTestForm PlayerForm = new WaveOutTestForm();
+		protected gen.snd.wave.views.SplashForm spx;
+		protected gen.snd.Forms.WaveOutTestForm PlayerForm = new gen.snd.Forms.WaveOutTestForm();
 
 		BasicAudioModule ActiveModule;
 		// ===============================================
 		// Splash (About) Screen
 		// ===============================================
-		SplashFormController splash;
+		gen.snd.wave.views.SplashFormController splash;
 		
 		#region Simple List Hide/Show Util
 		
@@ -297,13 +299,13 @@ namespace GenericWAV.Views
 		void Event_ShowSineWaveTestForm(object sender, EventArgs e)
 		{
 			if (PlayerForm.IsDisposed)
-				PlayerForm = new WaveOutTestForm();
+				PlayerForm = new gen.snd.Forms.WaveOutTestForm();
 			PlayerForm.Show(this);
 		}
 		
 		void Event_BPM_Show(object sender, EventArgs e)
 		{
-			BpmCalculatorForm frm = new BpmCalculatorForm();
+			gen.snd.Forms.BpmCalculatorForm frm = new gen.snd.Forms.BpmCalculatorForm();
 			frm.ShowDialog(this);
 		}
 		
@@ -377,7 +379,7 @@ namespace GenericWAV.Views
 		#region ComponentModel.Initialization
 		void InitializeSpashScreen()
 		{
-			splash = new SplashFormController(this,Images.genio2012,true);
+			splash = new gen.snd.wave.views.SplashFormController(this,Images.genio2012,true);
 			this.aboutToolStripMenuItem.Click += splash.Event_Splash_Show;
 		}
 		void PrepareExplo()
@@ -403,7 +405,9 @@ namespace GenericWAV.Views
 		}
 
 		protected override void OnLoad(EventArgs e) {
-			base.OnLoad(e); spx.Dispose(); this.Show();
+			base.OnLoad(e);
+			if (spx!=null) spx.Dispose();
+			this.Show();
 		}
 		#endregion
 		
@@ -454,7 +458,7 @@ namespace GenericWAV.Views
 			this.testButtonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.testFrequencyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.splita = new System.Windows.Forms.SplitContainer();
-			this.XPLO = new System.CommonControls.CsShellFileView();
+			this.XPLO = new Windows.CommonControls.CsShellFileView();
 			this.splitb = new System.Windows.Forms.SplitContainer();
 			this.splitd = new System.Windows.Forms.SplitContainer();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -885,13 +889,13 @@ namespace GenericWAV.Views
 		private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
 		private System.Windows.Forms.StatusStrip miniToolStrip;
 		private System.Windows.Forms.ListView lv;
-		private System.CommonControls.CsShellFileView XPLO;
+		private Windows.CommonControls.CsShellFileView XPLO;
 		#endregion
 		
-		FrequencyTestForm FreqTester;
+		gen.snd.Forms.FrequencyTestForm FreqTester;
 		void Event_TestFreq(object sender, EventArgs e)
 		{
-			using (FreqTester = new FrequencyTestForm())
+			using (FreqTester = new gen.snd.Forms.FrequencyTestForm())
 				FreqTester.ShowDialog(this);
 		}
 	}
