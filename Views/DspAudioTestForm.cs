@@ -39,7 +39,7 @@ namespace GenericWAV.Views
 	{
 		#region Settings
 		
-		public bool isFileTreeVisible = true; // default = true;
+		private bool isFileTreeVisible; // default = true;
 		
 		public bool IsFileListVisible {
 			get { return !XPLO.SCo.Panel2Collapsed; }
@@ -117,7 +117,7 @@ namespace GenericWAV.Views
 					string test = m.Groups[1].Value;
 					switch (test)
 					{
-							case "IsFileViewVisible": form.IsFileViewVisible = Boolean.Parse(m.Groups[2].Value); break;
+//							case "IsFileViewVisible": form.IsFileViewVisible = Boolean.Parse(m.Groups[2].Value); break;
 							case "IsFileListVisible": form.IsFileListVisible = Boolean.Parse(m.Groups[2].Value); break;
 							case "IsWaveVisible": form.IsWaveVisible = Boolean.Parse(m.Groups[2].Value); break;
 					}
@@ -128,8 +128,8 @@ namespace GenericWAV.Views
 		
 		#endregion
 		Bitmap SplashImage;
-		protected gen.snd.wave.views.SplashForm spx;
-		protected gen.snd.Forms.WaveOutTestForm PlayerForm = new gen.snd.Forms.WaveOutTestForm();
+		private gen.snd.wave.views.SplashForm spx;
+		private gen.snd.Forms.WaveOutTestForm PlayerForm;
 
 		BasicAudioModule ActiveModule;
 		// ===============================================
@@ -170,10 +170,9 @@ namespace GenericWAV.Views
 		}
 		void InitializeUI<T>()
 		{
-			basic_forms_module<T>.InitializeListViews(lv,lva,lvb);
-			basic_forms_module<T>.InitializeSplitContainers(
-				this.splita,this.splitb,this.splitc,this.splitd);
-			basic_forms_module<T>.InitializeExplo(XPLO);
+			basic_forms_module<T>.InitializeListViews( lv, lva, lvb );
+			basic_forms_module<T>.InitializeSplitContainers( this.splita,this.splitb,this.splitc,this.splitd );
+			basic_forms_module<T>.InitializeExplo( XPLO );
 		}
 		
 		#endregion
@@ -257,7 +256,7 @@ namespace GenericWAV.Views
 			// Wave File Loader
 			if ( fileExt==".wav" ) using (new ListHandler(ActionBefore<RiffForm>,ActionPost))
 			{
-				PlayerForm.WaveFile = XPLO.CurPath;
+//				PlayerForm.WaveFile = XPLO.CurPath;
 				module_file_wave module = new module_file_wave(XPLO.CurPath);
 			}
 			else if ( fileExt==".akp" ) guiakp();
@@ -471,17 +470,22 @@ namespace GenericWAV.Views
 			this.miniToolStrip = new System.Windows.Forms.StatusStrip();
 			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.menuMain.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splita)).BeginInit();
 			this.splita.Panel1.SuspendLayout();
 			this.splita.Panel2.SuspendLayout();
 			this.splita.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitb)).BeginInit();
 			this.splitb.Panel1.SuspendLayout();
 			this.splitb.Panel2.SuspendLayout();
 			this.splitb.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitd)).BeginInit();
 			this.splitd.Panel1.SuspendLayout();
 			this.splitd.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitc)).BeginInit();
 			this.splitc.Panel1.SuspendLayout();
 			this.splitc.Panel2.SuspendLayout();
 			this.splitc.SuspendLayout();
@@ -544,28 +548,27 @@ namespace GenericWAV.Views
 			// menuMain
 			// 
 			this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			                             	this.fileToolStripMenuItem,
-			                             	this.helpToolStripMenuItem,
-			                             	this.toolsToolStripMenuItem});
+			this.fileToolStripMenuItem,
+			this.helpToolStripMenuItem,
+			this.toolsToolStripMenuItem});
 			this.menuMain.Location = new System.Drawing.Point(0, 0);
 			this.menuMain.Name = "menuMain";
 			this.menuMain.Padding = new System.Windows.Forms.Padding(0);
 			this.menuMain.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-			this.menuMain.Size = new System.Drawing.Size(875, 24);
+			this.menuMain.Size = new System.Drawing.Size(1225, 24);
 			this.menuMain.TabIndex = 2;
 			this.menuMain.Text = "menuStrip1";
 			// 
 			// fileToolStripMenuItem
 			// 
 			this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			                                                  	this.openWaveFormToolStripMenuItem});
+			this.openWaveFormToolStripMenuItem});
 			this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
 			this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
 			this.fileToolStripMenuItem.Text = "&File";
 			// 
 			// openWaveFormToolStripMenuItem
 			// 
-			this.openWaveFormToolStripMenuItem.Enabled = false;
 			this.openWaveFormToolStripMenuItem.Name = "openWaveFormToolStripMenuItem";
 			this.openWaveFormToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
 			this.openWaveFormToolStripMenuItem.Text = "Open Wave-Form";
@@ -574,7 +577,7 @@ namespace GenericWAV.Views
 			// 
 			this.helpToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			                                                  	this.aboutToolStripMenuItem});
+			this.aboutToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
 			this.helpToolStripMenuItem.Text = "&Help";
@@ -588,10 +591,10 @@ namespace GenericWAV.Views
 			// toolsToolStripMenuItem
 			// 
 			this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			                                                   	this.samplePlayerToolStripMenuItem,
-			                                                   	this.bMPToolStripMenuItem,
-			                                                   	this.testButtonToolStripMenuItem,
-			                                                   	this.testFrequencyToolStripMenuItem});
+			this.samplePlayerToolStripMenuItem,
+			this.bMPToolStripMenuItem,
+			this.testButtonToolStripMenuItem,
+			this.testFrequencyToolStripMenuItem});
 			this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
 			this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
 			this.toolsToolStripMenuItem.Text = "Tools";
@@ -630,7 +633,6 @@ namespace GenericWAV.Views
 			this.splita.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.splita.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
 			this.splita.Location = new System.Drawing.Point(0, 24);
-			this.splita.Margin = new System.Windows.Forms.Padding(2);
 			this.splita.Name = "splita";
 			// 
 			// splita.Panel1
@@ -641,9 +643,8 @@ namespace GenericWAV.Views
 			// 
 			this.splita.Panel2.Controls.Add(this.splitb);
 			this.splita.Panel2.Controls.Add(this.waveControl1);
-			this.splita.Size = new System.Drawing.Size(875, 462);
-			this.splita.SplitterDistance = 262;
-			this.splita.SplitterWidth = 3;
+			this.splita.Size = new System.Drawing.Size(1225, 647);
+			this.splita.SplitterDistance = 270;
 			this.splita.TabIndex = 3;
 			// 
 			// XPLO
@@ -653,10 +654,10 @@ namespace GenericWAV.Views
 			this.XPLO.DOPROC = false;
 			this.XPLO.Filter = null;
 			this.XPLO.Location = new System.Drawing.Point(0, 0);
-			this.XPLO.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+			this.XPLO.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.XPLO.ModelIconSize = w32.shell.SHGFI.SMALLICON;
 			this.XPLO.Name = "XPLO";
-			this.XPLO.Size = new System.Drawing.Size(262, 462);
+			this.XPLO.Size = new System.Drawing.Size(270, 647);
 			this.XPLO.TabIndex = 0;
 			// 
 			// splitb
@@ -664,7 +665,7 @@ namespace GenericWAV.Views
 			this.splitb.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.splitb.Font = new System.Drawing.Font("Ubuntu Mono", 12F, System.Drawing.FontStyle.Bold);
 			this.splitb.Location = new System.Drawing.Point(0, 0);
-			this.splitb.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.splitb.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
 			this.splitb.Name = "splitb";
 			this.splitb.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
@@ -675,9 +676,8 @@ namespace GenericWAV.Views
 			// splitb.Panel2
 			// 
 			this.splitb.Panel2.Controls.Add(this.splitc);
-			this.splitb.Size = new System.Drawing.Size(610, 395);
-			this.splitb.SplitterDistance = 183;
-			this.splitb.SplitterWidth = 3;
+			this.splitb.Size = new System.Drawing.Size(951, 556);
+			this.splitb.SplitterDistance = 257;
 			this.splitb.TabIndex = 2;
 			// 
 			// splitd
@@ -685,7 +685,6 @@ namespace GenericWAV.Views
 			this.splitd.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.splitd.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
 			this.splitd.Location = new System.Drawing.Point(0, 0);
-			this.splitd.Margin = new System.Windows.Forms.Padding(2);
 			this.splitd.Name = "splitd";
 			this.splitd.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			// 
@@ -697,28 +696,27 @@ namespace GenericWAV.Views
 			// 
 			this.splitd.Panel2.BackColor = System.Drawing.SystemColors.ControlDark;
 			this.splitd.Panel2Collapsed = true;
-			this.splitd.Size = new System.Drawing.Size(610, 183);
+			this.splitd.Size = new System.Drawing.Size(951, 257);
 			this.splitd.SplitterDistance = 88;
-			this.splitd.SplitterWidth = 2;
+			this.splitd.SplitterWidth = 3;
 			this.splitd.TabIndex = 0;
 			// 
 			// splitContainer1
 			// 
 			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+			this.splitContainer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.splitContainer1.Name = "splitContainer1";
 			// 
 			// splitContainer1.Panel1
 			// 
 			this.splitContainer1.Panel1.Controls.Add(this.treeView1);
-			this.splitContainer1.Panel1Collapsed = true;
 			// 
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.lv);
-			this.splitContainer1.Size = new System.Drawing.Size(610, 183);
-			this.splitContainer1.SplitterDistance = 147;
-			this.splitContainer1.SplitterWidth = 3;
+			this.splitContainer1.Size = new System.Drawing.Size(951, 257);
+			this.splitContainer1.SplitterDistance = 538;
 			this.splitContainer1.TabIndex = 3;
 			// 
 			// treeView1
@@ -726,8 +724,9 @@ namespace GenericWAV.Views
 			this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.treeView1.Location = new System.Drawing.Point(0, 0);
+			this.treeView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
 			this.treeView1.Name = "treeView1";
-			this.treeView1.Size = new System.Drawing.Size(147, 183);
+			this.treeView1.Size = new System.Drawing.Size(538, 257);
 			this.treeView1.TabIndex = 0;
 			// 
 			// lv
@@ -737,10 +736,9 @@ namespace GenericWAV.Views
 			this.lv.FullRowSelect = true;
 			this.lv.LargeImageList = this.imageList1;
 			this.lv.Location = new System.Drawing.Point(0, 0);
-			this.lv.Margin = new System.Windows.Forms.Padding(2);
 			this.lv.MultiSelect = false;
 			this.lv.Name = "lv";
-			this.lv.Size = new System.Drawing.Size(610, 183);
+			this.lv.Size = new System.Drawing.Size(409, 257);
 			this.lv.SmallImageList = this.imageList1;
 			this.lv.TabIndex = 2;
 			this.lv.UseCompatibleStateImageBehavior = false;
@@ -750,7 +748,7 @@ namespace GenericWAV.Views
 			// 
 			this.splitc.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.splitc.Location = new System.Drawing.Point(0, 0);
-			this.splitc.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
+			this.splitc.Margin = new System.Windows.Forms.Padding(1, 3, 1, 3);
 			this.splitc.Name = "splitc";
 			// 
 			// splitc.Panel1
@@ -760,9 +758,8 @@ namespace GenericWAV.Views
 			// splitc.Panel2
 			// 
 			this.splitc.Panel2.Controls.Add(this.lvb);
-			this.splitc.Size = new System.Drawing.Size(610, 209);
-			this.splitc.SplitterDistance = 314;
-			this.splitc.SplitterWidth = 3;
+			this.splitc.Size = new System.Drawing.Size(951, 295);
+			this.splitc.SplitterDistance = 488;
 			this.splitc.TabIndex = 0;
 			// 
 			// lva
@@ -772,9 +769,8 @@ namespace GenericWAV.Views
 			this.lva.FullRowSelect = true;
 			this.lva.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.lva.Location = new System.Drawing.Point(0, 0);
-			this.lva.Margin = new System.Windows.Forms.Padding(2);
 			this.lva.Name = "lva";
-			this.lva.Size = new System.Drawing.Size(314, 209);
+			this.lva.Size = new System.Drawing.Size(488, 295);
 			this.lva.SmallImageList = this.imageList1;
 			this.lva.TabIndex = 1;
 			this.lva.UseCompatibleStateImageBehavior = false;
@@ -787,9 +783,8 @@ namespace GenericWAV.Views
 			this.lvb.FullRowSelect = true;
 			this.lvb.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
 			this.lvb.Location = new System.Drawing.Point(0, 0);
-			this.lvb.Margin = new System.Windows.Forms.Padding(2);
 			this.lvb.Name = "lvb";
-			this.lvb.Size = new System.Drawing.Size(293, 209);
+			this.lvb.Size = new System.Drawing.Size(459, 295);
 			this.lvb.SmallImageList = this.imageList1;
 			this.lvb.TabIndex = 1;
 			this.lvb.UseCompatibleStateImageBehavior = false;
@@ -798,20 +793,20 @@ namespace GenericWAV.Views
 			// waveControl1
 			// 
 			this.waveControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.waveControl1.Location = new System.Drawing.Point(0, 395);
-			this.waveControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+			this.waveControl1.Location = new System.Drawing.Point(0, 556);
+			this.waveControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.waveControl1.Name = "waveControl1";
-			this.waveControl1.Size = new System.Drawing.Size(610, 67);
+			this.waveControl1.Size = new System.Drawing.Size(951, 91);
 			this.waveControl1.TabIndex = 3;
 			// 
 			// miniToolStrip
 			// 
 			this.miniToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			                                  	this.toolStripDropDownButton1});
-			this.miniToolStrip.Location = new System.Drawing.Point(0, 486);
+			this.toolStripDropDownButton1});
+			this.miniToolStrip.Location = new System.Drawing.Point(0, 671);
 			this.miniToolStrip.Name = "miniToolStrip";
-			this.miniToolStrip.Padding = new System.Windows.Forms.Padding(1, 0, 11, 0);
-			this.miniToolStrip.Size = new System.Drawing.Size(875, 22);
+			this.miniToolStrip.Padding = new System.Windows.Forms.Padding(1, 0, 15, 0);
+			this.miniToolStrip.Size = new System.Drawing.Size(1225, 22);
 			this.miniToolStrip.TabIndex = 4;
 			// 
 			// toolStripDropDownButton1
@@ -824,16 +819,15 @@ namespace GenericWAV.Views
 			// 
 			// DspAudioTestForm
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(5F, 11F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(875, 508);
+			this.ClientSize = new System.Drawing.Size(1225, 693);
 			this.Controls.Add(this.splita);
 			this.Controls.Add(this.miniToolStrip);
 			this.Controls.Add(this.menuMain);
 			this.DoubleBuffered = true;
-			this.Font = new System.Drawing.Font("Ubuntu Mono", 8.25F, System.Drawing.FontStyle.Bold);
-			this.Margin = new System.Windows.Forms.Padding(2);
-			this.MinimumSize = new System.Drawing.Size(420, 287);
+			this.Font = new System.Drawing.Font("Ubuntu Mono", 11F, System.Drawing.FontStyle.Bold);
+			this.MinimumSize = new System.Drawing.Size(582, 378);
 			this.Name = "DspAudioTestForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "genericwav";
@@ -843,17 +837,22 @@ namespace GenericWAV.Views
 			this.menuMain.PerformLayout();
 			this.splita.Panel1.ResumeLayout(false);
 			this.splita.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splita)).EndInit();
 			this.splita.ResumeLayout(false);
 			this.splitb.Panel1.ResumeLayout(false);
 			this.splitb.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitb)).EndInit();
 			this.splitb.ResumeLayout(false);
 			this.splitd.Panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitd)).EndInit();
 			this.splitd.ResumeLayout(false);
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.splitc.Panel1.ResumeLayout(false);
 			this.splitc.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitc)).EndInit();
 			this.splitc.ResumeLayout(false);
 			this.miniToolStrip.ResumeLayout(false);
 			this.miniToolStrip.PerformLayout();

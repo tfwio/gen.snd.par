@@ -11,10 +11,12 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
     <ReferencePath>F:\DEV\WIN\CS_ROOT\ExternalLib.Bin.Rel\System.Cor3</ReferencePath>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <NoWin32Manifest>False</NoWin32Manifest>
     <NoStdLib>False</NoStdLib>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\oio\AppData\Roaming\ICSharpCode\SharpDevelop5\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <Optimize>False</Optimize>
@@ -59,6 +61,9 @@
     <FileAlignment>4096</FileAlignment>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>..\..\AssemblyReferences\NAudio\Debug\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition">
       <HintPath>..\..\AssemblyReferences\MEFv9-MOD\System.ComponentModel.Composition.dll</HintPath>
@@ -130,10 +135,6 @@
     <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CS_Mercurial\naudio\NAudio\NAudio.csproj">
-      <Project>{DA4F02E3-0B5E-42CD-B8D9-5583FA51D66E}</Project>
-      <Name>NAudio</Name>
-    </ProjectReference>
     <ProjectReference Include="..\gen.snd.common\gen.snd.common.csproj">
       <Project>{669C9CD9-8B80-4D6D-B5D7-A39B1224A50E}</Project>
       <Name>gen.snd.common</Name>
