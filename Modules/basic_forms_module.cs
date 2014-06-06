@@ -21,10 +21,6 @@
 using System;
 using System.Windows.Forms;
 
-//using Windows.CommonControls;
-
-using gen.snd.Modules;
-
 namespace gen.snd.Modules
 {
 	abstract class basic_forms_module<TModule> : BasicAudioModule<TModule>

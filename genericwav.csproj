@@ -135,13 +135,13 @@
     <Folder Include="Views" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\cor3.win\Windows.CommonControls.Interop.csproj">
+      <Project>{0C6AC21B-D2DB-439C-85DE-A8F116EE7437}</Project>
+      <Name>Windows.CommonControls.Interop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\gen.snd.common\gen.snd.common.csproj">
       <Project>{669C9CD9-8B80-4D6D-B5D7-A39B1224A50E}</Project>
       <Name>gen.snd.common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\windows.commoncontrols\Windows.CommonControls.csproj">
-      <Project>{EF5E071B-BDAD-4FA8-8997-B66C2CC24B33}</Project>
-      <Name>Windows.CommonControls</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
