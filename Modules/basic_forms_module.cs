@@ -25,7 +25,7 @@ using System.Windows.Forms;
 
 using gen.snd.Modules;
 
-namespace GenericWAV.Modules
+namespace gen.snd.Modules
 {
 	abstract class basic_forms_module<TModule> : BasicAudioModule<TModule>
 	{

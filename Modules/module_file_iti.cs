@@ -26,7 +26,7 @@ using System.Windows.Forms;
 using gen.snd.Formats;
 using gen.snd.Modules;
 
-namespace GenericWAV.Modules
+namespace gen.snd.Modules
 {
 	[Export(typeof(IAudioModule<>))]
 	class module_file_iti : basic_forms_module<ITI>

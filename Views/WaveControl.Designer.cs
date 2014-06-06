@@ -19,7 +19,7 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
 // DEALINGS IN THE SOFTWARE.
 #endregion
-namespace GenericWAV.Views
+namespace gen.snd
 {
 	partial class WaveControl
 	{
@@ -49,7 +49,7 @@ namespace GenericWAV.Views
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.waveFormControl1 = new GenericWAV.Views.WaveFormControl();
+			this.waveFormControl1 = new gen.snd.WaveFormControl();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.comboBox1 = new System.Windows.Forms.ComboBox();
 			this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
@@ -115,6 +115,6 @@ namespace GenericWAV.Views
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 		private System.Windows.Forms.ComboBox comboBox1;
 		private System.Windows.Forms.HScrollBar hScrollBar1;
-		private GenericWAV.Views.WaveFormControl waveFormControl1;
+		private gen.snd.WaveFormControl waveFormControl1;
 	}
 }

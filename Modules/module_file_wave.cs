@@ -80,7 +80,7 @@ namespace GenericWAV.Modules
 		#endregion
 		
 		string MainChunkLength	{ get { return AudioModule.Cks.ckMain.ckLength.ToString("##,###,###,##0"); } }
-		string FormatInfo		{ get { return string.Format( Strings.WaveInfo, AudioModule.Cks.ckFmt.fmtRate, AudioModule.Cks.ckFmt.fmtBlock, AudioModule.Cks.ckFmt.fmtTag, AudioModule.Cks.ckFmt.fmtChannels ); } }
+		string FormatInfo		{ get { return string.Format( gen.snd.Strings.WaveInfo, AudioModule.Cks.ckFmt.fmtRate, AudioModule.Cks.ckFmt.fmtBlock, AudioModule.Cks.ckFmt.fmtTag, AudioModule.Cks.ckFmt.fmtChannels ); } }
 		
 		public override void LoadModule()
 		{
@@ -101,7 +101,7 @@ namespace GenericWAV.Modules
 		public override ListViewItem CreateMainListViewItem()
 		{
 			//	Insert Column Headers
-			Common.lvcols(ref lv,new string[]{"ckID","ckSize","pos"});
+			gen.snd.Common.lvcols(ref lv,new string[]{"ckID","ckSize","pos"});
 			//	Create RAM
 			ListViewItem lvx = lv.Items.Add(new ListViewItem(new string[]{ FileName, MainChunkLength, FormatInfo },0));
 			lvx.BackColor = Color.Black;

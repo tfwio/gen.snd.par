@@ -33,7 +33,7 @@ using gen.snd.IffForm;
 using gen.snd.Modules;
 using GenericWAV.Modules;
 
-namespace GenericWAV.Views
+namespace gen.snd
 {
 	partial class DspAudioTestForm : Form
 	{
@@ -128,14 +128,14 @@ namespace GenericWAV.Views
 		
 		#endregion
 		Bitmap SplashImage;
-		private gen.snd.wave.views.SplashForm spx;
+		private System.Windows.Forms.SplashForm spx;
 		private gen.snd.Forms.WaveOutTestForm PlayerForm;
 
 		BasicAudioModule ActiveModule;
 		// ===============================================
 		// Splash (About) Screen
 		// ===============================================
-		gen.snd.wave.views.SplashFormController splash;
+		SplashFormController splash;
 		
 		#region Simple List Hide/Show Util
 		
@@ -378,7 +378,7 @@ namespace GenericWAV.Views
 		#region ComponentModel.Initialization
 		void InitializeSpashScreen()
 		{
-			splash = new gen.snd.wave.views.SplashFormController(this,Images.genio2012,true);
+			splash = new SplashFormController(this,Images.genio2012,true);
 			this.aboutToolStripMenuItem.Click += splash.Event_Splash_Show;
 		}
 		void PrepareExplo()
@@ -466,7 +466,7 @@ namespace GenericWAV.Views
 			this.splitc = new System.Windows.Forms.SplitContainer();
 			this.lva = new System.Windows.Forms.ListView();
 			this.lvb = new System.Windows.Forms.ListView();
-			this.waveControl1 = new GenericWAV.Views.WaveControl();
+			this.waveControl1 = new gen.snd.WaveControl();
 			this.miniToolStrip = new System.Windows.Forms.StatusStrip();
 			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.menuMain.SuspendLayout();
@@ -859,7 +859,7 @@ namespace GenericWAV.Views
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private GenericWAV.Views.WaveControl waveControl1;
+		private gen.snd.WaveControl waveControl1;
 		private System.Windows.Forms.TreeView treeView1;
 		private System.Windows.Forms.SplitContainer splitContainer1;
 		private System.Windows.Forms.ToolStripMenuItem testFrequencyToolStripMenuItem;

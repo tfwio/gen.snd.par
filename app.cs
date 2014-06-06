@@ -20,7 +20,7 @@
 #endregion
 using System;
 using System.Windows.Forms;
-using GenericWAV.Views;
+using gen.snd;
 
 namespace GenericWAV
 {

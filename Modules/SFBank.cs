@@ -22,7 +22,7 @@ using System;
 using System.Windows.Forms;
 using gen.snd.Formats;
 
-namespace GenericWAV.Modules
+namespace gen.snd.Modules
 {
 	
 	public struct SFBank

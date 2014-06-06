@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
-    <RootNamespace>GenericWAV</RootNamespace>
-    <AssemblyName>GenericWAV</AssemblyName>
+    <RootNamespace>gen.snd</RootNamespace>
+    <AssemblyName>generic.wav</AssemblyName>
     <ProjectGuid>{73D0FED9-101D-4C98-B725-B107AB468A3C}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>

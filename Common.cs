@@ -22,7 +22,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace GenericWAV
+namespace gen.snd
 {
 	static class Strings
 	{

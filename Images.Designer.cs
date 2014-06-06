@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GenericWAV {
+namespace gen.snd {
 	using System;
 	
 	
@@ -39,7 +39,7 @@ namespace GenericWAV {
 		public static global::System.Resources.ResourceManager ResourceManager {
 			get {
 				if (object.ReferenceEquals(resourceMan, null)) {
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("GenericWAV.Images", typeof(Images).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("gen.snd.Images", typeof(Images).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;

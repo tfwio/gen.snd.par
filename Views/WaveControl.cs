@@ -24,7 +24,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace GenericWAV.Views
+namespace gen.snd
 {
 	/// <summary>
 	/// Description of WaveControl.

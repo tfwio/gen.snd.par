@@ -28,7 +28,7 @@ using System.Windows.Forms;
 using gen.snd.IffForm;
 using GraphicsUnit=System.Cor3.Drawing.DblUnit;
 
-namespace GenericWAV.Views
+namespace gen.snd
 {
 	
 	/// <summary>

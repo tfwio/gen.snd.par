@@ -26,6 +26,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
+using gen.snd;
 using gen.snd.Formats;
 using gen.snd.IffForm;
 using gen.snd.Modules;
